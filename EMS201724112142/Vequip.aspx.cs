@@ -41,17 +41,21 @@ namespace EMS201724112142
             FileUpload file = (FileUpload)DetailsView1.FindControl("FileUpload1");
             if (file.HasFile)
             {
+                Label eid = (Label)DetailsView1.FindControl("Label1");
+                String id = eid.Text.Trim();//trim去掉首尾空格
                 string filename = file.FileName;
                 string path = Server.MapPath("~/img/") + filename;
                 file.SaveAs(path);
                 SqlDataSource1.UpdateParameters["Epic"].DefaultValue = "~/img/" + filename;
+                TextBox epic = (TextBox)DetailsView1.FindControl("TextBox1");
+                epic.Text = SqlDataSource1.UpdateParameters["Epic"].DefaultValue;
                 //连接数据库
                 String cnstr = @"Data Source=(LocalDB)\MSSQLLocalDB;" + "AttachDbFilename=|DataDirectory|Database1.mdf;" + "Integrated Security=True";
                 SqlConnection conn = new SqlConnection(cnstr);
                 //打开数据库连接
                 conn.Open();
                 //传入sql语句
-                String sql = "update Equipment set Epic='" + SqlDataSource1.UpdateParameters["Epic"].DefaultValue + "' WHERE Eid = '"+SqlDataSource1.UpdateParameters["Eid"].DefaultValue+"'";
+                String sql = "update Equipment set Epic='" + epic.Text + "' where Eid='" + id + "'";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();

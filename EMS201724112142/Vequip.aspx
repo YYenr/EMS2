@@ -38,15 +38,34 @@
             <AlternatingRowStyle BackColor="#CCCCCC" />
             <EditRowStyle BackColor="#DEDFDE" Font-Bold="False" ForeColor="Black" BorderColor="#D8D8D8" BorderStyle="Solid" HorizontalAlign="Left" VerticalAlign="Middle" Font-Italic="False" Font-Underline="False" BorderWidth="2px" />
             <Fields>
-                <asp:BoundField DataField="Eid" HeaderText="编号" ReadOnly="True" SortExpression="Eid" />
+                <asp:TemplateField HeaderText="编号" SortExpression="Eid">
+                    <EditItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("Eid") %>'></asp:Label>
+                    </EditItemTemplate>
+                    <InsertItemTemplate>
+                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Eid") %>'></asp:TextBox>
+                    </InsertItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("Eid") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField DataField="Ename" HeaderText="名称" SortExpression="Ename" />
                 <asp:BoundField DataField="Esize" HeaderText="规格" SortExpression="Esize" />
                 <asp:BoundField DataField="Eprice" HeaderText="价格" SortExpression="Eprice" />
-                <asp:BoundField DataField="Edate" HeaderText="购入日期" DataFormatString="{0:yyyy-MM-dd}" HtmlEncode="false" SortExpression="Edate" />
+                <asp:BoundField DataField="Edate" HeaderText="购入日期" DataFormatString="{0:yyyy-MM-dd}" HtmlEncode="False" SortExpression="Edate" />
                 <asp:BoundField DataField="Eplace" HeaderText="存放位置" SortExpression="Eplace" />
                 <asp:BoundField DataField="manager" HeaderText="负责人编号" SortExpression="manager" />
-                <asp:ImageField DataAlternateTextField="Epic" DataImageUrlField="Epic" NullImageUrl="~/img/002.png" HeaderText="设备图片">
-                 </asp:ImageField>
+                <asp:TemplateField HeaderText="设备图片">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Eval("Epic") %>' Tooltip='<%# Eval("Epic") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <InsertItemTemplate>
+                        <asp:TextBox ID="TextBox2" runat="server" Text='<%# Eval("Epic") %>' Tooltip='<%# Eval("Epic") %>'></asp:TextBox>
+                    </InsertItemTemplate>
+                    <ItemTemplate>
+                        <asp:Image ID="Image1" runat="server" AlternateText='<%# Eval("Epic") %>' ImageUrl='<%# Eval("Epic") %>' />
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:TemplateField ShowHeader="False" Visible="True">
                     <EditItemTemplate>
                         <asp:FileUpload ID="FileUpload1" runat="server" BackColor="White" BorderColor="#FFE8FF" BorderStyle="Dashed" BorderWidth="2px" /> 

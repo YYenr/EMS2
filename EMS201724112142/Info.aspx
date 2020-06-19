@@ -16,8 +16,8 @@
                 <EditRowStyle BackColor="#FFF4FF" />
                 <FieldHeaderStyle BackColor="#E2D8DF" Font-Bold="True" />
                 <Fields>
-                    <asp:BoundField DataField="id" HeaderText="员工编号" ReadOnly="True" SortExpression="id" />
-                    <asp:BoundField DataField="password" HeaderText="密码" SortExpression="password" />
+                    <asp:BoundField DataField="id" HeaderText="您的编号" ReadOnly="True" SortExpression="id" />
+                    <asp:BoundField DataField="password" HeaderText="您的密码" SortExpression="password" />
                     <asp:BoundField DataField="name" HeaderText="姓名" SortExpression="name" ReadOnly="True" />
                     <asp:BoundField DataField="phone" HeaderText="联系电话" SortExpression="phone" />
                     <asp:BoundField DataField="Did" HeaderText="部门代号" SortExpression="Did" ReadOnly="True" />

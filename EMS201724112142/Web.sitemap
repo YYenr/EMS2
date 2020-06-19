@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode  url="" title=" "  description=" ">
+    <siteMapNode url="~/index.aspx" title="主页"  description="HOME"/>
+    <siteMapNode url="" title="一般查询"  description="Simple_Search">
+      <siteMapNode url="~/Sdpt.aspx" title="部门查询"  description="Department_Search" />
+      <siteMapNode url="~/Sperson.aspx" title="人员查询"  description="Person_Search" />
+      <siteMapNode url="~/Sequip.aspx" title="设备查询"  description="Equipment_Search" />
+    </siteMapNode>
+    <siteMapNode url="" title="管理员特权"  description="VIP" >
+      <siteMapNode url="~/Vdept.aspx" title="部门管理"  description="Department_Manage" />
+      <siteMapNode url="~/Vperson.aspx" title="人员管理"  description="Person_Manage" />
+      <siteMapNode url="~/Vequip.aspx" title="设备管理"  description="Equipment_Manage" />
+    </siteMapNode>
+    <siteMapNode url="~/Info.aspx" title="我的资料"  description="AboutMe"/>
+  </siteMapNode>
+  
+
+</siteMap>

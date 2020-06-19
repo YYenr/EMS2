@@ -49,7 +49,7 @@
                         <asp:Label ID="Label1" runat="server" Text='<%# Bind("Eid") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:BoundField DataField="Ename" HeaderText="名称" SortExpression="Ename" />
+                <asp:BoundField DataField="Ename" HeaderText="名称" SortExpression="Ename" /> 
                 <asp:BoundField DataField="Esize" HeaderText="规格" SortExpression="Esize" />
                 <asp:BoundField DataField="Eprice" HeaderText="价格" SortExpression="Eprice" />
                 <asp:BoundField DataField="Edate" HeaderText="购入日期" DataFormatString="{0:yyyy-MM-dd}" HtmlEncode="False" SortExpression="Edate" />

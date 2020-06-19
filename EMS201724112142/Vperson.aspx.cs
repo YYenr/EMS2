@@ -88,9 +88,9 @@ namespace EMS201724112142
             StringBuilder sb = new StringBuilder();
             foreach (var m in result)
             {
-                sb.Append(string.Format("<br/>{0}共拥有{1}位员工", m.部门名称, m.人员数量));
+                sb.Append(string.Format("<br/>{0}共拥有{1}位员工<br/>", m.部门名称, m.人员数量));
             }
-            Label1.Text = sb.ToString();
+            Label1.Text = sb.ToString()+ string.Format("<br/>");
         }
     }
 }
